@@ -1,28 +1,21 @@
 #include "main.h"
-/**
- *more_numbers - prints 1-14 10x
- *
- *Return: Always 0
- */
 
+/**
+ * more_numbers - prints 0 through 9, ten times
+ *
+ * Return: void
+ */
 void more_numbers(void)
 {
-	int cycle, num;
+	char i, j;
 
-	for (cycle = 1; cycle <= 10; cycle++)
+	for (i = 0; i < 10; i++)
 	{
-		for (num = 0; num <= 14; num++)
+		for (j = 0; j < 15; j++)
 		{
-			int tens, ones;
-
-			tens = num / 10;
-			ones = num % 10;
-
-		if (tens != 0)
-			_putchar (tens + '0');
-
-			_putchar (ones + '0');
-
+			if (j / 10 > 0)
+				_putchar(j / 10 + '0');
+			_putchar(j % 10 + '0');
 		}
 		_putchar('\n');
 	}
