@@ -1,23 +1,27 @@
 #include "main.h"
 
 /**
- * _memcpy - function with 3 arguments
+ * _strcat - function with two argument
  * @dest: char type pointer 1st argument
  * @src: char type pointer 2nd argument
- * @n: unsigned int type 3rd argument
  *
- * Description: copies memory area
- * Return: dest
+ * Description: concatenates two strings
+ * Return: na
  */
-char *_strcat(char *dest, char *src, unsigned int n)
+char *_strcat(char *dest, char *src)
 {
-	unsigned int i;
+	char *start = dest;
 
-	i = 0;
-	while (i < n)
+	while (*dest != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		dest++;
 	}
-	return (dest);
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = '\0';
+	return (start);
 }
