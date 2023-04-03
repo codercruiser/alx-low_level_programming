@@ -1,20 +1,17 @@
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * free_listint - function with one argument
- * @head: pointer to node
- *
- * Description: frees a list
- * Return: void
+ * free_list - Free all malloced spaced of a list
+ * @head: Pointer to the start of the list
  */
-void free_listint(listint_t *head)
+void free_list(list_t *head)
 {
-	listint_t *verve;
-
-	while (head)
+	if (head != NULL)
 	{
-		traverse = head->next;
+		if (head->next != NULL)
+			free_list(head->next);
+		free(head->str);
 		free(head);
-		head = verve;
 	}
 }
