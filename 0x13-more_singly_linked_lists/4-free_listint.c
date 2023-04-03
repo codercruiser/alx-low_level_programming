@@ -1,17 +1,20 @@
-#include <stdlib.h>
 #include "lists.h"
 
 /**
- * free_list - Free all malloced spaced of a list
- * @head: Pointer to the start of the list
+ * free_listint - frees a list
+ * @head: the pointer to the struct
+ *
+ * Return: number of elements
  */
-void free_list(list_t *head)
+
+void free_listint(listint_t *head)
 {
-	if (head != NULL)
+	listint_t *freeing;
+
+	while (head != NULL)
 	{
-		if (head->next != NULL)
-			free_list(head->next);
-		free(head->str);
-		free(head);
+		fr = head;
+		head = freeing->next;
+		free(freeing);
 	}
 }
