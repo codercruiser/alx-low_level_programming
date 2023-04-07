@@ -1,4 +1,4 @@
-#include "main.h"
+#include "coding.h"
 
 /**
  * read_textfile - function with two arguments
@@ -10,7 +10,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file = 0;
+	int ssd = 0;
 	int reader = 0;
 	int output = 0;
 	char *buffer;
@@ -22,14 +22,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 		return (0);
 
-	fd = open(filename, O_RDONLY);
-	if (file == -1)
+	ssd = open(filename, O_RDONLY);
+	if (ssd == -1)
 	{
 		free(buffer);
 		return (0);
 	}
 
-	reader = read(file, buffer, letters);
+	reader = read(ssd, buffer, letters);
 	if (reader == -1)
 	{
 		free(buffer);
@@ -42,7 +42,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buffer);
 		return (0);
 	}
-	close(file);
+	close(ssd);
 	free(buffer);
 	return (output);
 }
