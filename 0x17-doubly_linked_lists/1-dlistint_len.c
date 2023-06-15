@@ -6,10 +6,10 @@
  *
  * Return: Total number of elements
  */
-size_t dlistint_len(const dlistint_t *head)
+size_t dlistint_len(const dlistint_t *h)
 {
     size_t count = 0;
-    const dlistint_t *current = head;
+    const dlistint_t *current = h;
 
     while (current)
     {
